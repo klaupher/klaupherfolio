@@ -24,7 +24,7 @@ model Tecnologia {
 
   @@map("tecnologia")
 }
-
+ 
 model Projeto{
   id    Int @id @default(autoincrement())
   nome  String
