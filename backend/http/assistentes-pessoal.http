@@ -1,0 +1,14 @@
+POST http://localhost:5678/webhook-test/assistente-pessoal
+Content-Type: application/json
+
+{
+    "chatId": "14785",
+    "message": "Quanto tempo de experiencia ela tem?"
+}
+
+
+###
+GET http://localhost:3000/tecnologias
+
+###
+GET http://localhost:3000/projetos/1

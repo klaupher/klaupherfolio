@@ -18,6 +18,6 @@ export class ProjetoController {
 
 	@Get(':id')
 	async obterPorId(@Param('id') id: number): Promise<Projeto | null> {
-		return this.repo.obterPorId(id)
+		return this.repo.obterPorId(Number(id))
 	}
 }
