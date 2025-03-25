@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 	description: 'Portifolio de projeto de desenvolvimento web',
 }
 
-const fonte = Roboto({
+const fonte = Montserrat({
 	subsets: ['latin'],
 })
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="pt-BR">
 			<body className={`${fonte.className} antialiased`}>{children}</body>
 		</html>
 	)
