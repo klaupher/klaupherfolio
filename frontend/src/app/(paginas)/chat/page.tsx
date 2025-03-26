@@ -1,24 +1,36 @@
 'use client'
 
+import { ConteudoMD } from '@/components/shared/ConteudoMD'
 import useChat from '@/hooks/useChat'
+import Image from 'next/image'
 import { useState } from 'react'
 import { text } from 'stream/consumers'
 
 export default function Chat() {
-	const { chatId, mensagens, adicionarMensagem } = useChat()
+	const { chatId, mensagens, pensando, adicionarMensagem, limparMensagens } = useChat()
 	const [texto, setTexto] = useState('')
 	return (
 		<div>
 			<h1>Chat</h1>
 			<h2>Chat Id: {chatId}</h2>
+			<button type="button" onClick={limparMensagens}>
+				Limpar
+			</button>
+
 			<ul>
 				{mensagens.map((mensagem) => (
 					<li key={mensagem.id}>
 						<span>{mensagem.autor}: </span>
-						<span>{mensagem.texto}</span>
+						<ConteudoMD markdown={mensagem.texto} />
 					</li>
 				))}
 			</ul>
+
+			{pensando && (
+				<div>
+					<Image src="/pensando.gif" alt="icone pensnado..." width={50} height={50} />
+				</div>
+			)}
 			<input
 				type="text"
 				value={texto}

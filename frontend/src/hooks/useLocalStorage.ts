@@ -1,12 +1,16 @@
+'use client'
 import { useEffect, useState } from 'react'
 
-export default function useLocalStorage<T>(key: string, initialValue: T) {
-	const [storedValue, setStoredValue] = useState<T>(() => {
-		const localValue = localStorage.getItem(key)
-		return localValue ? JSON.parse(localValue) : initialValue
+export default function useLocalStorage<T>(chave: string, valorInicial: T) {
+	const [valor, setValor] = useState<T>(() => {
+		const valorLocal = localStorage.length > 0 ? localStorage.getItem(chave) : null
+		return valorLocal ? JSON.parse(valorLocal) : valorInicial
 	})
+
 	useEffect(() => {
-		localStorage.setItem(key, JSON.stringify(storedValue))
-	}, [key, storedValue])
-	return [storedValue, setStoredValue] as const
+		localStorage.setItem(chave, JSON.stringify(valor))
+		console.log(localStorage.getItem('mensagens'))
+	}, [chave, valor])
+
+	return [valor, setValor] as const
 }
