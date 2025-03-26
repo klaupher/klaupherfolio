@@ -1,6 +1,6 @@
 import Mensagem from '@/model/Mensagem'
 import { ConteudoMD } from '../shared/ConteudoMD'
-import { IconFriends, IconRobot, IconRobotFace, IconUser } from '@tabler/icons-react'
+import { IconRobot } from '@tabler/icons-react'
 
 export interface BalaoMensagemProps {
 	mensagem: Mensagem

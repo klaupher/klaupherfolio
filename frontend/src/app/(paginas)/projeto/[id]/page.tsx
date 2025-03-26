@@ -4,7 +4,6 @@ import Container from '@/components/shared/Container'
 import CarrosselImagens from '@/components/shared/Carrossel.Imagens'
 import Tecnologias from '@/components/tecnologias/Tecnologias'
 import { obterReadme } from '@/functions/github'
-import { ConteudoMD } from '@/components/shared/ConteudoMD'
 import Readme from '@/components/projetos/Readme'
 
 export default async function PaginaProjeto(props: { params: Promise<{ id: string }> }) {
