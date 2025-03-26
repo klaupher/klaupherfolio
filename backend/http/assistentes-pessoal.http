@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
     "chatId": "14785",
-    "message": "Quanto tempo de experiencia ela tem?"
+    "mensagem": "Como está o tempo hoje?"
 }
 
 
